@@ -1,0 +1,5 @@
+{
+  "name": "Card",
+  "private": true,
+  "main": "./Card.js"
+}
