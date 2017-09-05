@@ -7,10 +7,11 @@ const TextInput = ({
   placeholder,
   onChange,
   name,
-  value
+  value,
+  type
 }) => (
   <input
-    type        = "text"
+    type        = { type }
     name        = { name }
     className   = { styles.TextInput }
     value       = { value }
@@ -19,11 +20,13 @@ const TextInput = ({
 );
 
 TextInput.defaultProps = {
+  type: 'text',
   placeholder: '',
   value: ''
 };
 
 TextInput.propTypes = {
+  type: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
