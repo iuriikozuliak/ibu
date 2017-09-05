@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Card component 1`] = `
+<div
+  className="Card"
+/>
+`;
+
+exports[`Renders Card component with passed children 1`] = `
+<div
+  className="Card"
+>
+  <h2>
+    Card Title
+  </h2>
+</div>
+`;
