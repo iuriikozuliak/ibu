@@ -5,13 +5,18 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { initForm } from 'modules/forms';
+import {
+  initForm,
+  setValue
+} from 'modules/forms';
 
 const withForm = (Wrapped, options) => {
   class Form extends Component {
-    // constructor(props) {
-    //   super(props);
-    // }
+    constructor(props) {
+      super(props);
+
+      this.handleChange = this.handleChange.bind(this);
+    }
     componentWillMount() {
       const { initForm } = this.props;
       const {
@@ -24,6 +29,17 @@ const withForm = (Wrapped, options) => {
         initialValues
       });
     }
+    handleChange({ currentTarget: { name, value } }) {
+      const {
+        setValue
+      } = this.props;
+
+      setValue({
+        id: options.id,
+        name,
+        value
+      });
+    }
     render() {
       const {
         form: {
@@ -33,14 +49,16 @@ const withForm = (Wrapped, options) => {
       } = this.props;
 
       return (
-        <Wrapped values = { values || initialValues || {} } />
+        <Wrapped
+          onChange = { this.handleChange }
+          values   = { values || initialValues || {} } />
       );
     }
   }
 
   return connect(state => ({
     form: state.forms[options.id] || {}
-  }), { initForm })(Form);
+  }), { initForm, setValue })(Form);
 };
 
 export default withForm;

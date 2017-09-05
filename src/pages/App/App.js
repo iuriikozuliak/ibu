@@ -5,11 +5,13 @@ import withForm  from 'hoc/withForm';
 
 import styles from './App.css';
 
-const Form = ({ values }) => (
+const Form = ({ values, onChange }) => (
   <form>
     <TextInput
       value       = { values.age }
-      placeholder = "Age of traveller" />
+      placeholder = "Age of traveller"
+      onChange    = { onChange }
+      name        = "age" />
   </form>
 );
 

@@ -1,5 +1,7 @@
 import reducer, {
   INIT_FORM,
+  SET_VALUE,
+  setValue,
   initForm
 } from '../index';
 
@@ -17,6 +19,18 @@ describe('Forms actions creators', () => {
     };
     expect(initForm({ id, initialValues})).toEqual(expectedAction);
   });
+
+  it('should create a setValue action', () => {
+    const expectedAction = {
+      type: SET_VALUE,
+      payload: {
+        id,
+        name: 'name',
+        value: 'John'
+      }
+    };
+    expect(setValue({ id, name: 'name', value: 'John' })).toEqual(expectedAction);
+  });
 });
 
 describe('Forms reducer', () => {
@@ -33,6 +47,19 @@ describe('Forms reducer', () => {
       [id]: {
         isInitialized: true,
         initialValues
+      }
+    });
+  });
+
+  it('should handle SET_VALUE', () => {
+    expect(
+      reducer({ [id]: { initialValues }}, setValue({ id, name: 'name', value: 'John' }))
+    ).toEqual({
+      [id]: {
+        initialValues,
+        values: {
+          name: 'John'
+        }
       }
     });
   });
