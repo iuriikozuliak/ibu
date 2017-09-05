@@ -1,0 +1,5 @@
+@value dark from 'theme/colors.css';
+
+.shadow {
+  box-shadow: 0 0 4px dark;
+}

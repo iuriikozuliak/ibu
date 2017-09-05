@@ -1,0 +1,10 @@
+@value unit from "theme/size.css";
+@value black from 'theme/colors.css';
+
+:global {
+  @import "../../theme/typography.css";
+}
+
+.App {
+  color: black;
+}

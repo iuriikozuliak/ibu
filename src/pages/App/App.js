@@ -1,9 +1,13 @@
 import React from 'react';
-import styles from './index.css';
+import Card from 'components/Card';
+
+import styles from './App.css';
 
 const App = () => (
   <div className={styles.App}>
-    <h2>Yay</h2>
+    <Card>
+      <h2>Yay</h2>
+    </Card>
   </div>
 );
 
