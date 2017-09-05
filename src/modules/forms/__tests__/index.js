@@ -1,7 +1,9 @@
 import reducer, {
   INIT_FORM,
   SET_VALUE,
+  SET_ERROR,
   setValue,
+  setError,
   initForm
 } from '../index';
 
@@ -17,19 +19,39 @@ describe('Forms actions creators', () => {
         initialValues
       }
     };
-    expect(initForm({ id, initialValues})).toEqual(expectedAction);
+    expect(
+      initForm({ id, initialValues})
+    ).toEqual(expectedAction);
   });
 
   it('should create a setValue action', () => {
+    const payload = {
+      id,
+      name: 'name',
+      value: 'John'
+    };
     const expectedAction = {
       type: SET_VALUE,
-      payload: {
-        id,
-        name: 'name',
-        value: 'John'
-      }
+      payload
     };
-    expect(setValue({ id, name: 'name', value: 'John' })).toEqual(expectedAction);
+    expect(
+      setValue(payload)
+    ).toEqual(expectedAction);
+  });
+
+  it('should create a setError action', () => {
+    const payload = {
+      id,
+      name: 'name',
+      error: 'Required'
+    };
+    const expectedAction = {
+      type: SET_ERROR,
+      payload
+    };
+    expect(
+      setError(payload)
+    ).toEqual(expectedAction);
   });
 });
 
@@ -58,6 +80,21 @@ describe('Forms reducer', () => {
       [id]: {
         values: {
           name: 'John'
+        }
+      }
+    });
+  });
+
+  it('should handle SET_ERROR', () => {
+    expect(
+      reducer({ [id]: { values: initialValues }}, setError({ id, name: 'name', error: 'Required' }))
+    ).toEqual({
+      [id]: {
+        values: {
+          name: 'John Doe'
+        },
+        errors: {
+          name: 'Required'
         }
       }
     });

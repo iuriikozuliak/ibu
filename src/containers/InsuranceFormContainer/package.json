@@ -1,0 +1,5 @@
+{
+  "name": "InsuranceFormContainer",
+  "private": true,
+  "main": "./InsuranceFormContainer.js"
+}

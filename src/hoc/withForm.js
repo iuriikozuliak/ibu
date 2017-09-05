@@ -7,7 +7,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   initForm,
-  setValue
+  setValue,
+  setError
 } from 'modules/forms';
 
 const withForm = (Wrapped, options) => {
@@ -16,6 +17,8 @@ const withForm = (Wrapped, options) => {
       super(props);
 
       this.handleChange = this.handleChange.bind(this);
+      this.handleArrayChange = this.handleArrayChange.bind(this);
+      this.handleFieldChange = this.handleFieldChange.bind(this);
     }
     componentWillMount() {
       const { initForm } = this.props;
@@ -29,41 +32,63 @@ const withForm = (Wrapped, options) => {
         initialValues
       });
     }
-    handleChange(e) {
+    handleArrayChange(fields) {
       const { id } = options;
+      const { setValue } = this.props;
+
+      fields.map(v => setValue({ id, ...v }));
+    }
+    handleFieldChange(field) {
       const {
-        setValue
+        id,
+        validate
+      } = options;
+      const {
+        name,
+        value
+      } = field;
+      const {
+        setValue,
+        setError
       } = this.props;
 
-      if (Array.isArray(e)) {
-        e.map(v => setValue({ id, ...v }));
-      } else if (e.currentTarget) {
-        const {
-          name, value
-        } = e.currentTarget;
+      setValue({ id, name, value });
 
-        setValue({ id, name, value });
+      if (validate[name]) {
+        const error = validate[name](value);
+
+        setError({ id, name, error });
+      }
+    }
+    handleChange(e) {
+      if (Array.isArray(e)) {
+        this.handleArrayChange(e);
+      }
+      if (e.currentTarget) {
+        this.handleFieldChange(e.currentTarget);
       }
     }
     render() {
       const {
         form: {
           initialValues,
-          values
+          values,
+          errors
         }
       } = this.props;
 
       return (
         <Wrapped
           onChange = { this.handleChange }
-          values   = { values || initialValues || {} } />
+          values   = { values || initialValues || {} }
+          errors   = { errors || {} } />
       );
     }
   }
 
   return connect(state => ({
     form: state.forms[options.id] || {}
-  }), { initForm, setValue })(Form);
+  }), { initForm, setValue, setError })(Form);
 };
 
 export default withForm;
