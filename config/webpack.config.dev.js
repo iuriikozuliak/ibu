@@ -160,6 +160,7 @@ module.exports = {
           // in development "style" loader enables hot editing of CSS.
           {
             test: /\.css$/,
+            exclude: /node_modules/,
             use: [
               require.resolve('style-loader'),
               {
@@ -179,7 +180,7 @@ module.exports = {
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     require('postcss-modules-values'),
-                    require("postcss-calc"),
+                    require('postcss-calc'),
                     autoprefixer({
                       browsers: [
                         '>1%',
@@ -192,6 +193,20 @@ module.exports = {
                   ],
                 },
               },
+            ],
+          },
+          {
+            test: /\.css$/,
+            include: /node_modules/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                },
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
