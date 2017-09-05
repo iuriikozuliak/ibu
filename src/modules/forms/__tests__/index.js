@@ -46,17 +46,16 @@ describe('Forms reducer', () => {
     ).toEqual({
       [id]: {
         isInitialized: true,
-        initialValues
+        values: initialValues
       }
     });
   });
 
   it('should handle SET_VALUE', () => {
     expect(
-      reducer({ [id]: { initialValues }}, setValue({ id, name: 'name', value: 'John' }))
+      reducer({ [id]: { values: initialValues }}, setValue({ id, name: 'name', value: 'John' }))
     ).toEqual({
       [id]: {
-        initialValues,
         values: {
           name: 'John'
         }

@@ -8,7 +8,7 @@ const actions = {
     ...state,
     [id]: {
       isInitialized: true,
-      initialValues
+      values: initialValues
     }
   }),
   [SET_VALUE]: (state, { payload: { id, name, value }}) => ({
