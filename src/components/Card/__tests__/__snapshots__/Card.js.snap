@@ -10,6 +10,7 @@ exports[`Renders Card component with passed children 1`] = `
 <div
   className="Card"
 >
+    
   <h2>
     Card Title
   </h2>

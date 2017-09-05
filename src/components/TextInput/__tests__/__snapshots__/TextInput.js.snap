@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders TextInput component 1`] = `
+<input
+  className="TextInput"
+  placeholder=""
+  type="text"
+/>
+`;
+
+exports[`Renders TextInput component with passed placeholder prop 1`] = `
+<input
+  className="TextInput"
+  placeholder="First Name"
+  type="text"
+/>
+`;
