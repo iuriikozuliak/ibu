@@ -11,7 +11,7 @@ test('Renders Card component', () => {
 
 test('Renders Card component with passed children', () => {
   const component = renderer.create(
-    <Card>
+    <Card>  
       <h2>Card Title</h2>
     </Card>
   ).toJSON();

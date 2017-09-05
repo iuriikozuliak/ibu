@@ -7,7 +7,7 @@ import configureStore from './configureStore';
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store = { store }>
     <App />
   </Provider>,
   document.getElementById('root')
@@ -16,7 +16,7 @@ ReactDOM.render(
 if (module.hot) {
   module.hot.accept('./pages/App', () => {
     ReactDOM.render(
-      <Provider store={store}>
+      <Provider store = { store }>
         <App />
       </Provider>,
       document.getElementById('root')
