@@ -1,8 +1,8 @@
-@value unit from "theme/size.css";
+@value unit from 'theme/size.css';
 @value black from 'theme/colors.css';
 
 :global {
-  @import "../../theme/typography.css";
+  @import '../../theme/typography.css';
 }
 
 .App {

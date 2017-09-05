@@ -29,16 +29,21 @@ const withForm = (Wrapped, options) => {
         initialValues
       });
     }
-    handleChange({ currentTarget: { name, value } }) {
+    handleChange(e) {
+      const { id } = options;
       const {
         setValue
       } = this.props;
 
-      setValue({
-        id: options.id,
-        name,
-        value
-      });
+      if (Array.isArray(e)) {
+        e.map(v => setValue({ id, ...v }));
+      } else if (e.currentTarget) {
+        const {
+          name, value
+        } = e.currentTarget;
+
+        setValue({ id, name, value });
+      }
     }
     render() {
       const {

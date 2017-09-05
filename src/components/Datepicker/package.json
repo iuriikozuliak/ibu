@@ -1,0 +1,5 @@
+{
+  "name": "Datepicker",
+  "private": true,
+  "main": "./Datepicker.js"
+}
