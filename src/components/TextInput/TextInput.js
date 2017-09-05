@@ -4,20 +4,29 @@ import PropTypes from 'prop-types';
 import styles from './TextInput.css';
 
 const TextInput = ({
-  placeholder
+  placeholder,
+  onChange,
+  name,
+  value
 }) => (
   <input
     type        = "text"
+    name        = { name }
     className   = { styles.TextInput }
-    placeholder = { placeholder } />
+    value       = { value }
+    placeholder = { placeholder }
+    onChange    = { onChange } />
 );
 
 TextInput.defaultProps = {
-  placeholder: ''
+  placeholder: '',
+  value: ''
 };
 
 TextInput.propTypes = {
-  placeholder: PropTypes.String
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default TextInput;

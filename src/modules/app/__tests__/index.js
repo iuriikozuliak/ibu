@@ -21,7 +21,7 @@ describe('App reducer', () => {
     });
   });
 
-  it('should handle EDIT_CARD', () => {
+  it('should handle INIT_APP', () => {
     expect(
       reducer(undefined, initApp())
     ).toEqual({

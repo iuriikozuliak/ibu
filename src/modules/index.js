@@ -1,8 +1,8 @@
-const dummyReducer = (state, action) => {
-  switch (action.type) {
-  default:
-    return state;
-  }
-};
+import { combineReducers } from 'redux';
+import forms from 'modules/forms';
+import app from 'modules/app';
 
-export default dummyReducer;
+export default combineReducers({
+  forms,
+  app
+});

@@ -3,15 +3,21 @@
 exports[`Renders TextInput component 1`] = `
 <input
   className="TextInput"
+  name={undefined}
+  onChange={undefined}
   placeholder=""
   type="text"
+  value=""
 />
 `;
 
 exports[`Renders TextInput component with passed placeholder prop 1`] = `
 <input
   className="TextInput"
+  name={undefined}
+  onChange={undefined}
   placeholder="First Name"
   type="text"
+  value=""
 />
 `;
