@@ -1,7 +1,5 @@
 export const required = (value) => {
   if (!value) { return 'Required'; }
-
-  return '';
 };
 
 export const inRange = (start, end) => (value) => {
@@ -12,8 +10,6 @@ export const inRange = (start, end) => (value) => {
   if (!value || isNaN(value) || (number < min || number > max)) {
     return `Must be in range between ${min} and ${max}`;
   }
-
-  return '';
 };
 
 export const getErrors = (ruleset, value) => {
@@ -25,7 +21,7 @@ export const getErrors = (ruleset, value) => {
     }, '').slice(0, -2);
   }
   if (typeof ruleset === 'function') {
-    return ruleset(value);
+    return ruleset(value) || '';
   }
 };
 

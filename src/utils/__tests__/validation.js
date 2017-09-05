@@ -13,9 +13,9 @@ describe('Required validation rule', () => {
   });
 
   test('Returns empty error message if value is present', () => {
-    expect(required('John Doe')).toEqual('');
-    expect(required('123')).toEqual('');
-    expect(required(123)).toEqual('');
+    expect(required('John Doe')).toEqual(undefined);
+    expect(required('123')).toEqual(undefined);
+    expect(required(123)).toEqual(undefined);
   });
 });
 
@@ -31,10 +31,10 @@ describe('InRange validation rule', () => {
   });
 
   test('Returns empty message if value is in range', () => {
-    expect(rule(10)).toEqual('');
-    expect(rule(15)).toEqual('');
-    expect(rule(20)).toEqual('');
-    expect(rule('20')).toEqual('');
+    expect(rule(10)).toEqual(undefined);
+    expect(rule(15)).toEqual(undefined);
+    expect(rule(20)).toEqual(undefined);
+    expect(rule('20')).toEqual(undefined);
   });
 });
 
