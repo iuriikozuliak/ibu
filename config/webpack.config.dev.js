@@ -179,6 +179,7 @@ module.exports = {
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     require('postcss-modules-values'),
+                    require("postcss-calc"),
                     autoprefixer({
                       browsers: [
                         '>1%',

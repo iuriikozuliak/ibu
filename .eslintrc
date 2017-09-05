@@ -5,6 +5,7 @@
     "eslint-config-airbnb/rules/react"
   ],
   "rules": {
+    "import/extensions": 0,
     "new-cap": 0,
     "camelcase": 0,
     "no-shadow": 0,
