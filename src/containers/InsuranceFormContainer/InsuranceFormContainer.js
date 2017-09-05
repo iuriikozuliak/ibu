@@ -4,11 +4,12 @@ import TextInput  from 'components/TextInput';
 import Datepicker from 'components/Datepicker';
 import withForm   from 'hoc/withForm';
 import {
-  required
+  required,
+  inRange
 } from 'utils/validation';
 
 const validate = {
-  age: required
+  age: [required, inRange(10, 20)],
 };
 
 const Form = ({
@@ -24,6 +25,7 @@ const Form = ({
       onChange  = { onChange }
       name      = "date" />
     <TextInput
+      type        = "number"
       value       = { values.age }
       placeholder = "Age of traveller"
       onChange    = { onChange }

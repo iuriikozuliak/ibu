@@ -10,6 +10,9 @@ import {
   setValue,
   setError
 } from 'modules/forms';
+import {
+  getErrors
+} from 'utils/validation';
 
 const withForm = (Wrapped, options) => {
   class Form extends Component {
@@ -55,7 +58,7 @@ const withForm = (Wrapped, options) => {
       setValue({ id, name, value });
 
       if (validate[name]) {
-        const error = validate[name](value);
+        const error = getErrors(validate[name], value);
 
         setError({ id, name, error });
       }
