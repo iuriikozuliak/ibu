@@ -1,3 +1,24 @@
+@value success, dark from 'theme/colors.css';
+@value unit, unit2x, unit4x from 'theme/size.css';
+
 .Box {
   composes: box from 'theme/layout.css';
+}
+
+.Box.Bordered {
+  border: 1px solid dark;
+}
+
+.Box.Big {
+  text-align: center;
+  padding: unit4x;
+  margin: unit2x 0 0;
+}
+
+.Box.Success {
+  border-color: success;
+}
+
+.Box.Rounded {
+  border-radius: unit
 }
