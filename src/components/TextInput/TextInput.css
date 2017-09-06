@@ -1,10 +1,20 @@
 @value dark from 'theme/colors.css';
-@value inputHeight from 'theme/size.css';
+@value unit from 'theme/size.css';
+@value danger from 'theme/colors.css';
 
 .TextInput {
   border: 1px solid dark;
   outline: none;
-  height: 48px;
+  height: 50px;
   padding: 0 20px;
   width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.TextInputError {
+  color: danger;
+  font-size: .75em;
+  position: absolute;
+  padding-top: unit;
 }

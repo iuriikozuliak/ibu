@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DateRangePicker }  from 'react-dates';
+import Box                  from 'components/Box';
 
 import 'react-dates/lib/css/_datepicker.css';
 import './Datepicker.css';
@@ -41,14 +42,16 @@ class Datepicker extends Component {
     } = this.props;
 
     return (
-      <DateRangePicker
-        onDatesChange = { this.onDatesChange }
-        onFocusChange = { this.onFocusChange }
-        focusedInput  = { focusedInput }
-        startDate     = { startDate }
-        endDate       = { endDate }
-        withPortal
-        hideKeyboardShortcutsPanel />
+      <Box>
+        <DateRangePicker
+          onDatesChange = { this.onDatesChange }
+          onFocusChange = { this.onFocusChange }
+          focusedInput  = { focusedInput }
+          startDate     = { startDate }
+          endDate       = { endDate }
+          withPortal
+          hideKeyboardShortcutsPanel />
+      </Box>
     );
   }
 }

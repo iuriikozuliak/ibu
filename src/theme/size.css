@@ -4,5 +4,5 @@
 @value unit4x: calc(unit * 4);
 @value defMargin: unit2x 0;
 @value defPadding: unit unit2x;
-@value lgPadding: unit4x unit4x;
+@value lgPadding: unit4x;
 @value maxWidth: calc(unit * 90);

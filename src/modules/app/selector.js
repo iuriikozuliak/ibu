@@ -39,6 +39,11 @@ const getTripLength = (state) => {
   return endDate.diff(startDate, 'days');
 };
 
+export const tripLengthSelector = createSelector(
+  [getTripLength],
+  tripLength => `${tripLength} day${tripLength > 1 ? 's' : ''}`
+);
+
 export const insurancePriceSelector = createSelector(
   [getAge, getTripLength],
   (age, tripLength) => {

@@ -2,7 +2,6 @@ import React      from 'react';
 import TextInput  from 'components/TextInput';
 import Datepicker from 'components/Datepicker';
 import Flexbox    from 'components/Flexbox';
-import Box        from 'components/Box';
 import withForm   from 'hoc/withForm';
 import {
   required,
@@ -25,22 +24,18 @@ const Form = ({
 }) => (
   <form>
     <Flexbox>
-      <Box>
-        <Datepicker
-          startDate = { values.startDate }
-          endDate   = { values.endDate }
-          onChange  = { onChange }
-          name      = "date" />
-      </Box>
-      <Box>
-        <TextInput
-          type        = "number"
-          value       = { values.age }
-          placeholder = "Age of traveller"
-          onChange    = { onChange }
-          name        = "age" />
-        { errors.age }
-      </Box>
+      <Datepicker
+        startDate = { values.startDate }
+        endDate   = { values.endDate }
+        onChange  = { onChange }
+        name      = "date" />
+      <TextInput
+        type        = "number"
+        value       = { values.age }
+        error       = { errors.age }
+        placeholder = "Age of traveller"
+        onChange    = { onChange }
+        name        = "age" />
     </Flexbox>
   </form>
 );
