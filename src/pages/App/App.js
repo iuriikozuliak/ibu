@@ -3,6 +3,7 @@ import Card           from 'components/Card';
 import InsuranceForm  from 'containers/InsuranceFormContainer';
 import InsurancePrice from 'containers/InsurancePriceContainer';
 
+import 'normalize.css';
 import styles from './App.css';
 
 const App = () => (

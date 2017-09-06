@@ -7,4 +7,5 @@
 .container {
   max-width: maxWidth;
   padding: lgPadding;
+  margin: 0 auto;
 }

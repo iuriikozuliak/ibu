@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DateRangePicker }  from 'react-dates';
 
 import 'react-dates/lib/css/_datepicker.css';
+import './Datepicker.css';
 
 class Datepicker extends Component {
   constructor(props) {

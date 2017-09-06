@@ -1,3 +1,11 @@
 .Datepicker {
 
 }
+
+:global(.DateRangePicker) {
+  width: 100%;
+}
+
+:global(.DateRangePickerInput) {
+  width: 100%;
+}

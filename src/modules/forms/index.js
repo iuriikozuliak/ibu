@@ -1,8 +1,8 @@
 import omit from 'lodash/omit';
 
-export const INIT_FORM = 'app/INIT_FORM';
-export const SET_VALUE = 'app/SET_VALUE';
-export const SET_ERROR = 'app/SET_ERROR';
+export const INIT_FORM = 'app/forms/INIT_FORM';
+export const SET_VALUE = 'app/forms/SET_VALUE';
+export const SET_ERROR = 'app/forms/SET_ERROR';
 
 const initialState = {};
 
@@ -57,7 +57,7 @@ export function setError({ id, name, error }) {
 }
 
 
-export default function appReducer(state = initialState, action = {}) {
+export default function formReducer(state = initialState, action = {}) {
   const handler = actions[action.type];
   return handler ? handler(state, action) : state;
 }

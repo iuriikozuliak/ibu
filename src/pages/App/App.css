@@ -1,11 +1,18 @@
-@value unit from 'theme/size.css';
+@value unit4x, unit2x from 'theme/size.css';
 @value black from 'theme/colors.css';
 
 :global {
   @import '../../theme/typography.css';
 }
 
+* {
+  box-sizing: border-box
+}
+
 .App {
   color: black;
+  padding-top: unit4x;
+  padding-left: unit2x;
+  padding-right: unit2x;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }

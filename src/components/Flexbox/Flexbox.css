@@ -1,0 +1,17 @@
+@value unit2x from 'theme/size.css';
+
+.Flexbox {
+  display: flex;
+  margin: 0 -16px;
+}
+
+.Flexbox > * {
+  flex: 1 auto;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .Flexbox {
+    flex-wrap: wrap;
+  }
+}

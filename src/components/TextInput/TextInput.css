@@ -1,3 +1,10 @@
-.TextInput {
+@value dark from 'theme/colors.css';
+@value inputHeight from 'theme/size.css';
 
+.TextInput {
+  border: 1px solid dark;
+  outline: none;
+  height: 48px;
+  padding: 0 20px;
+  width: 100%;
 }

@@ -1,6 +1,7 @@
 import React      from 'react';
 import TextInput  from 'components/TextInput';
 import Datepicker from 'components/Datepicker';
+import Flexbox    from 'components/Flexbox';
 import Box        from 'components/Box';
 import withForm   from 'hoc/withForm';
 import {
@@ -23,22 +24,24 @@ const Form = ({
   onChange
 }) => (
   <form>
-    <Box>
-      <Datepicker
-        startDate = { values.startDate }
-        endDate   = { values.endDate }
-        onChange  = { onChange }
-        name      = "date" />
-    </Box>
-    <Box>
-      <TextInput
-        type        = "number"
-        value       = { values.age }
-        placeholder = "Age of traveller"
-        onChange    = { onChange }
-        name        = "age" />
-      { errors.age }
-    </Box>
+    <Flexbox>
+      <Box>
+        <Datepicker
+          startDate = { values.startDate }
+          endDate   = { values.endDate }
+          onChange  = { onChange }
+          name      = "date" />
+      </Box>
+      <Box>
+        <TextInput
+          type        = "number"
+          value       = { values.age }
+          placeholder = "Age of traveller"
+          onChange    = { onChange }
+          name        = "age" />
+        { errors.age }
+      </Box>
+    </Flexbox>
   </form>
 );
 
