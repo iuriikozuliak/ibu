@@ -1,0 +1,3 @@
+.Box {
+  composes: box from 'theme/layout.css';
+}
