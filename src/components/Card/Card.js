@@ -10,7 +10,10 @@ const Card = ({ children }) => (
 );
 
 Card.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
 };
 
 export default Card;

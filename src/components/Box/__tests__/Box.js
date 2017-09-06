@@ -36,7 +36,6 @@ test('Renders Box component with passed children and isBig modifier', () => {
   expect(component).toMatchSnapshot();
 });
 
-
 test('Renders Box component with passed children and isSuccess modifier', () => {
   const component = renderer.create(
     <Box isSuccess>
