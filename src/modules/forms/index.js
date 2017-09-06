@@ -1,3 +1,5 @@
+import omit from 'lodash/omit';
+
 export const INIT_FORM = 'app/INIT_FORM';
 export const SET_VALUE = 'app/SET_VALUE';
 export const SET_ERROR = 'app/SET_ERROR';
@@ -26,10 +28,9 @@ const actions = {
     ...state,
     [id]: {
       ...state[id],
-      errors: {
-        ...state[id].errors,
-        [name]: error
-      }
+      errors: (error
+        ? ({ ...state[id].errors, [name]: error })
+        : (omit(state[id].errors, name)))
     }
   })
 };

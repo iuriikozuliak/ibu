@@ -99,4 +99,20 @@ describe('Forms reducer', () => {
       }
     });
   });
+
+  it('should remove error from errors object if it\'s empty', () => {
+    expect(
+      reducer(
+        { [id]: { values: initialValues, errors: { name: 'Required' } }},
+        setError({ id, name: 'name', error: '' })
+      )
+    ).toEqual({
+      [id]: {
+        values: {
+          name: 'John Doe'
+        },
+        errors: {}
+      }
+    });
+  });
 });
