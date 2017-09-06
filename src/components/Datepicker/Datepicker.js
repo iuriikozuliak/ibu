@@ -46,7 +46,8 @@ class Datepicker extends Component {
         focusedInput  = { focusedInput }
         startDate     = { startDate }
         endDate       = { endDate }
-      />
+        withPortal
+        hideKeyboardShortcutsPanel />
     );
   }
 }

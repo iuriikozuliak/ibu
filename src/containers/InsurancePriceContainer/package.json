@@ -1,0 +1,5 @@
+{
+  "name": "InsurancePriceContainer",
+  "private": true,
+  "main": "./InsurancePriceContainer.js"
+}
