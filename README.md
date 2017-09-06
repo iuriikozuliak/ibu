@@ -53,9 +53,11 @@ project foundation that I'd be happy to continue to work with.
 
 ## Possible Improvements
 
+- add Flow
 - use the actual [redux-form](http://redux-form.com/7.0.4/)
 - replace object literals and price maps with something more advanced and flexible.
 - provide a way to add more travellers
+
 
 ## Usage
 
