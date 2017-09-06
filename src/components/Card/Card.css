@@ -1,5 +1,4 @@
 .Card {
   composes: shadow from 'theme/shadow.css';
   composes: container from 'theme/layout.css';
-  composes: box from 'theme/layout.css';
 }

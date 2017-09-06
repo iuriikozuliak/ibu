@@ -23,7 +23,6 @@ const Form = ({
   onChange
 }) => (
   <form>
-    <p>Diff: { values.endDate && values.endDate.diff(values.startDate, 'days') }</p>
     <Box>
       <Datepicker
         startDate = { values.startDate }

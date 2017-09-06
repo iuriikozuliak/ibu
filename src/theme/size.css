@@ -1,4 +1,5 @@
 @value unit: 8px;
 @value defMargin: calc(unit * 2) 0;
 @value defPadding: unit calc(unit * 2);
+@value lgPadding: unit calc(unit * 4);
 @value maxWidth: calc(unit * 60);

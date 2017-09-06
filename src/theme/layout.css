@@ -1,4 +1,4 @@
-@value maxWidth, defPadding from 'theme/size.css';
+@value maxWidth, defPadding, lgPadding from 'theme/size.css';
 
 .box {
   padding: defPadding;
@@ -6,4 +6,5 @@
 
 .container {
   max-width: maxWidth;
+  padding: lgPadding;
 }
