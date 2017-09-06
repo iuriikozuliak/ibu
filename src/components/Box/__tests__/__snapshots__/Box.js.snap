@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Box component 1`] = `
+<div
+  className="Box"
+/>
+`;
+
+exports[`Renders Box component with passed children 1`] = `
+<div
+  className="Box"
+>
+  <p>
+    Hi!
+  </p>
+</div>
+`;
+
+exports[`Renders Box component with passed children and isBig modifier 1`] = `
+<div
+  className="Box Big"
+>
+  <p>
+    Hi!
+  </p>
+</div>
+`;
+
+exports[`Renders Box component with passed children and isBordered modifier 1`] = `
+<div
+  className="Box Bordered"
+>
+  <p>
+    Hi!
+  </p>
+</div>
+`;
+
+exports[`Renders Box component with passed children and isSuccess modifier 1`] = `
+<div
+  className="Box Success"
+>
+  <p>
+    Hi!
+  </p>
+</div>
+`;
