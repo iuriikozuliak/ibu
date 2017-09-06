@@ -1,5 +1,6 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
+import Box       from 'components/Box';
 
 import styles from './TextInput.css';
 
@@ -8,21 +9,30 @@ const TextInput = ({
   onChange,
   name,
   value,
+  error,
   type
 }) => (
-  <input
-    type        = { type }
-    name        = { name }
-    className   = { styles.TextInput }
-    value       = { value }
-    placeholder = { placeholder }
-    onChange    = { onChange } />
+  <Box>
+    <input
+      type        = { type }
+      name        = { name }
+      className   = { styles.TextInput }
+      value       = { value }
+      placeholder = { placeholder }
+      onChange    = { onChange } />
+    { error &&
+      <div className = { styles.TextInputError }>
+        { error }
+      </div>
+    }
+  </Box>
 );
 
 TextInput.defaultProps = {
   type: 'text',
   placeholder: '',
-  value: ''
+  value: '',
+  error: ''
 };
 
 TextInput.propTypes = {
@@ -30,6 +40,7 @@ TextInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
+  error: PropTypes.string,
 };
 
 export default TextInput;
